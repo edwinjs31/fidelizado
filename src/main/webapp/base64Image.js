@@ -12,7 +12,7 @@ var handleFileSelect = function (evt) {
             //document.getElementById("responsearea").value = btoa(binaryString);
             
             let myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/octet-stream");
+            myHeaders.append("Content-Type", "application/json");
 
             var requestOptions = {
                 method: 'POST',

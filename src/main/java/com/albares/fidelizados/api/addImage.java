@@ -27,7 +27,7 @@ public class addImage {
     }*/
     
     @POST
-    @Consumes(MediaType.APPLICATION_OCTET_STREAM)
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addBase64Image(String image) throws IOException, NoSuchAlgorithmException {
         Image i = new Image();
