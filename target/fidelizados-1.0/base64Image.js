@@ -8,7 +8,8 @@ var handleFileSelect = function (evt) {
 
         reader.onload = function (readerEvt) {
             var binaryString = readerEvt.target.result;
-            //btoa() *Decodifica una cadena de datos que ha sido codificada en base-64.
+            //btoa() *Codifica o crea la cadena ASCII Base64 a partir de un archivo u objeto.
+            //stob() *Decodifica la cadena Base64 anterior y devuelve al estado original
             //document.getElementById("responsearea").value = btoa(binaryString);
             
             let myHeaders = new Headers();
@@ -17,7 +18,7 @@ var handleFileSelect = function (evt) {
             var requestOptions = {
                 method: 'POST',
                 headers: myHeaders,
-                body: btoa(binaryString),
+                body: JSON.stringify({imageString:btoa(binaryString)}),
                 redirect: 'follow'
             };
 

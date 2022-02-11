@@ -1,6 +1,7 @@
 package com.albares.fidelizados.utils;
 
 import com.albares.fidelizados.utils.Parameters;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -16,13 +17,24 @@ import org.apache.commons.codec.binary.Base64;
  *
  * @author Edwin Jaldin S.
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Image {
 
     public String imageUrl;
+    public String imageString;
 
     public Image() {
     }
 
+    public String getImageString() {
+        return imageString;
+    }
+
+    public void setImageString(String imageString) {
+        this.imageString = imageString;
+    }
+
+    
     public String getImageUrl() {
         return imageUrl;
     }
