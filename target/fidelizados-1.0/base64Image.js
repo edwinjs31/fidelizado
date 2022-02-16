@@ -14,11 +14,13 @@ var handleFileSelect = function (evt) {
             
             let myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
-
+            var imagen = {
+                imageString:btoa(binaryString)
+            };
             var requestOptions = {
                 method: 'POST',
                 headers: myHeaders,
-                body: JSON.stringify({imageString:btoa(binaryString)}),
+                body: JSON.stringify(imagen),
                 redirect: 'follow'
             };
 

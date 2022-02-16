@@ -30,9 +30,8 @@ public class addImage {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addBase64Image(Image image) throws IOException, NoSuchAlgorithmException {
-        Image i = new Image();
-        i.saveBase64Image(image.getImageString());
-        return (new Response(ResponseCode.OK, new GenericData(i)));
+        image.saveBase64Image(image.getImageString());
+        return (new Response(ResponseCode.OK, new GenericData(image)));
 
     }
 
